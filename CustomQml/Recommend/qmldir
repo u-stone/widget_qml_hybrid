@@ -1,0 +1,5 @@
+module Recommend
+
+RecommendCard 1.0 RecommendCard10.qml
+
+typeinfo plugin.qmltypes

@@ -1,0 +1,41 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resource/recommend/empty_placeholder_ch.png</file>
+        <file>resource/recommend/empty_placeholder_ch@2x.png</file>
+        <file>resource/recommend/empty_placeholder_ch@3x.png</file>
+        <file>resource/recommend/empty_placeholder_en.png</file>
+        <file>resource/recommend/empty_placeholder_en@2x.png</file>
+        <file>resource/recommend/empty_placeholder_en@3x.png</file>
+        <file>qml/model_view.qml</file>
+        <file>qml/qml_listview.qml</file>
+        <file>qml/simple_list_model.qml</file>
+        <file>js/java_script.js</file>
+        <file>qml/groupspace_recommend.qml</file>
+    </qresource>
+    <qresource prefix="/qt-project.org/imports">
+        <file>CustomQml/Recommend/res/activity_type.png</file>
+        <file>CustomQml/Recommend/res/activity_type@2x.png</file>
+        <file>CustomQml/Recommend/res/activity_type@3x.png</file>
+        <file>CustomQml/Recommend/res/icon_to_set.png</file>
+        <file>CustomQml/Recommend/res/icon_to_set@2x.png</file>
+        <file>CustomQml/Recommend/res/icon_to_set@3x.png</file>
+        <file>CustomQml/Recommend/res/recommend_dec.png</file>
+        <file>CustomQml/Recommend/res/recommend_dec@2x.png</file>
+        <file>CustomQml/Recommend/res/recommend_dec@3x.png</file>
+        <file>CustomQml/Recommend/res/recommend_hover.png</file>
+        <file>CustomQml/Recommend/res/recommend_hover@2x.png</file>
+        <file>CustomQml/Recommend/res/recommend_hover@3x.png</file>
+        <file>CustomQml/Recommend/res/recommend_normal.png</file>
+        <file>CustomQml/Recommend/res/recommend_normal@2x.png</file>
+        <file>CustomQml/Recommend/res/recommend_normal@3x.png</file>
+        <file>CustomQml/Recommend/res/recommend_placeholder.png</file>
+        <file>CustomQml/Recommend/res/recommend_placeholder@2x.png</file>
+        <file>CustomQml/Recommend/res/recommend_placeholder@3x.png</file>
+        <file>CustomQml/Recommend/res/try_icon.png</file>
+        <file>CustomQml/Recommend/res/try_icon@2x.png</file>
+        <file>CustomQml/Recommend/res/try_icon@3x.png</file>
+        <file>CustomQml/Recommend/plugin.qmltypes</file>
+        <file>CustomQml/Recommend/qmldir</file>
+        <file>CustomQml/Recommend/RecommendCard10.qml</file>
+    </qresource>
+</RCC>
