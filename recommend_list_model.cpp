@@ -21,7 +21,6 @@ int RecommendListModel::rowCount(const QModelIndex &parent) const
     // other (valid) parents, rowCount() should return 0 so that it does not become a tree model.
     if (parent.isValid())
         return 0;
-//    qDebug() << "row count: " << m_data.size();
     return m_data.size();
 }
 

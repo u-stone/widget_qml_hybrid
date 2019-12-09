@@ -3,8 +3,34 @@ import QtGraphicalEffects 1.0
 import QtQuick.Layouts 1.3
 
 Item {
+    property int itemWidth: 268
+    property int itemHeight: 312
+
     width: 268
     height: 312
+
+    onVisibleChanged: {
+        console.log(visible ? "show " + y : "hide " + y)
+    }
+
+    TextMetrics {
+        id: textMetrics
+        font.family: "Arial"
+        elide: Text.ElideRight
+        text: contentName
+    }
+
+    function calcFirstLineString() {
+        var line = textMetrics.text
+        var ret = line.substring(0, line.length - 1)
+        return ret
+    }
+
+    function calcSecondLineString() {
+        var line = calcFirstLineString()
+        var secondLine = textMetrics.text.substring(line)
+        return secondLine
+    }
 
     Image {
         id: imageBg
@@ -49,10 +75,7 @@ Item {
 
     Item {
         id: background
-        x: 0
-        y: 0
-        width: 268
-        height: 312
+        anchors.fill: parent
 
         Item {
             id: content
@@ -163,10 +186,8 @@ Item {
                             color: "#2f3742"
                             font.pixelSize: 16
                             font.weight: Font.Bold
-//                            Rectangle {
-//                                anchors.fill: parent
-//                                color: "gray"
-//                            }
+
+                            text: calcFirstLineString()
                         }
                     }
 
@@ -181,10 +202,7 @@ Item {
                         font.weight: Font.Bold
                         elide: Text.ElideRight
 
-//                        Rectangle {
-//                            anchors.fill: parent
-//                            color: "red"
-//                        }
+                        text: calcSecondLineString()
                     }
 
                 }
@@ -256,7 +274,7 @@ Item {
                         id: discountType
                         color: "#ff3271"
                         text: activityName
-                        anchors.centerIn: parent
+                        anchors.verticalCenter: parent.verticalCenter
                         leftPadding: 8
                         rightPadding: 3
                         font.pixelSize: 10
@@ -266,33 +284,5 @@ Item {
 
 
         }
-    }
-
-    TextMetrics {
-        id: textMetrics
-        font.family: "Arial"
-        elide: Text.ElideRight
-        text: contentName
-    }
-
-    function calcFirstLineString() {
-        var line = textMetrics.text
-        var ret = line.substring(0, line.length - 1)
-        console.log("first line: " + ret)
-        return ret
-    }
-
-    function calcSecondLineString() {
-        var line = calcFirstLineString()
-        var secondLine = textMetrics.text.substring(line)
-        console.log("second line: " + secondLine)
-        return secondLine
-    }
-
-    Component.onCompleted: {
-        console.log(titleHeader.width)
-        textMetrics.elideWidth = titleHeader.width
-        titleHeader.text = calcFirstLineString()
-        titleRest.text = calcSecondLineString()
     }
 }

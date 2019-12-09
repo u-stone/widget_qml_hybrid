@@ -13,6 +13,7 @@
 
 #include <QMainWindow>
 
+#include "recommend_list_model.h"
 namespace Ui {
 class MainWindow;
 }
@@ -27,6 +28,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    RecommendListModel m_model;
 };
 
 #endif // MAINWINDOW_H

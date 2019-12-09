@@ -20,6 +20,10 @@
 
 int main(int argc, char *argv[])
 {
+#if defined(Q_OS_WIN)
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+#endif
+
     QApplication a(argc, argv);
 
     qDebug() << QLibraryInfo::location(QLibraryInfo::Qml2ImportsPath);

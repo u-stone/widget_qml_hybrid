@@ -16,7 +16,6 @@
 #include <QQmlContext>
 #include <QQuickView>
 
-#include "recommend_list_model.h"
 #include "form_child_widget.h"
 
 #define SHOW_ONLY_RECOMMEND
@@ -60,18 +59,16 @@ MainWindow::MainWindow(QWidget *parent) :
     layout->addWidget(simple_list_view);
 #endif
 
-    RecommendListModel model;
     for (int i = 0; i < 10; i++) {
-        model.addRecommend();
+        m_model.addRecommend();
     }
 
-
     QQuickWidget *recommend_view = new QQuickWidget();
+    layout->addWidget(recommend_view);
     recommend_view->setResizeMode(QQuickWidget::SizeRootObjectToView);
     QQmlContext* ctx_custom = recommend_view->rootContext();
-    ctx_custom->setContextProperty("recomment_model", &model);
+    ctx_custom->setContextProperty("recomment_model", &m_model);
     recommend_view->setSource(QUrl(QStringLiteral("qrc:/qml/groupspace_recommend.qml")));
-    layout->addWidget(recommend_view);
 }
 
 MainWindow::~MainWindow()
