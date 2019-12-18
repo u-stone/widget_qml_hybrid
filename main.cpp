@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     QQuickView *list_view = new QQuickView();
     QQmlContext *ctx = list_view->rootContext();
     ctx->setContextProperty("simple_list_model", QVariant::fromValue(dataList));
-    list_view->setSource(QUrl(QStringLiteral("qrc:/qml/qml/model_view.qml")));
+    list_view->setSource(QUrl(QStringLiteral("qrc:/qml/model_view.qml")));
     list_view->show();
 #else
     // or load qml in a QWidget
